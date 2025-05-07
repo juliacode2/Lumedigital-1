@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dab3e9;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3a1242;
+    padding: 15px 20px;
+}
+.logo {
+    color: rgb(232, 180, 236);
+    font-size: 24px;
+    font-weight: bold;
+}
+.menu {
+    list-style: none;
+    display: flex;
+}
+.menu li {
+    margin-left: 20px;
+}
+.menu li a {
+    color: rgb(232, 180, 236);
+    text-decoration: none;
+    font-size: 18px;
+}
+.menu li a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+.botao {
+    padding: 15px 15px;
+    font-size: 20px;
+    background-color: #3a1242;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all .2s;
+    text-transform: uppercase;
+    display: inline-block;
+ 
+}
+.botao:hover {
+    background-color: rgb(182, 84, 228);
+
+}
+
+.container {
+               background: rgb(224, 178, 228);
+               display: flex;
+               padding: 100px;
+               border-radius: 8px;
+               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+               height: 600%;
+               text-align: center;
+               float: none;
+               right: 13px;
+               width: 500px;
+               
+               
+
+        }
+
+
+        </style>
+  
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Lume Digital</div>
+        <ul class="menu">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+<br>
+<br>
+<br>
+
+
+<center>
+   <div class="container">
+        
+    
+        <a href="../php/leitor.php">
+        <button class="botao" >Leitor </button>
+        </a><br><br>
+
+        <a href="../php/bibioteca.php">
+            <button class="botao"> Bibliotecário</button>
+        </a>
+    </center>
+
+        
+   
+</div>
+   
+</head>
+</body>
+</html>
