@@ -57,10 +57,6 @@ if($arra = !mysqli_fetch_array($result))
      HEADER('Location:Cilbpagia.php');
 
 
-/*
-Outra forma de fazer: mysqli_num_rows(), que retorna o número de linhas de registros encontrados.
-Se não encontrar nenhum é porque o usuario ou senha está errado(a).
-*/
 
 if($arra = mysqli_num_rows($result) == 1)
 {
