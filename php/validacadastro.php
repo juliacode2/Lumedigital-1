@@ -58,7 +58,7 @@ if(mysqli_num_rows($result) < 1)
 {
 
 
-$sql = "INSERT INTO TB_USUARIO (ID, NOME, EMAIL, TEL , CPF, CAMPO_USUARIO, CAMPO_SENHA) 
+$sql = "INSERT INTO cad2 (ID, NOME, EMAIL, TEL , CPF, CAMPO_USUARIO, CAMPO_SENHA) 
 VALUES (NULL, '$v1', '$v2', '$v3', '$v4', '$v5')";
 
 $result2 = mysqli_query($abc, $sql);
