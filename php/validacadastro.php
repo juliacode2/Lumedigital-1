@@ -19,6 +19,8 @@ $v3 = $_POST['cad_cpf'];
 $v4 = $_POST['cad_usu'];
 $v5 = $_POST['cad_email'];
 $v6 = $_POST['cad_senha'];
+$senha = password_hash($_POST['cad_senha'], PASSWORD_DEFAULT); // Criptografar a senha
+
 
 $cad_usuario = $_POST['cad_usu'];
 $cpf_usuario = $_POST['cad_cpf'];
