@@ -13,6 +13,18 @@ if(!isset($_POST['nome']))
   HEADER('Location:cad1.php');
 } 
 
+$servidor = 'localhost';
+$usuario = 'usuario';
+$senha = '';
+$banco = 'cad1'
+
+$link = mysqli_connect($servidor, $usuario, $senha, $banco)
+or die ('Nao foi possivel conectar: '.mysqli_connect($link));
+
+if (isset($_REQUEST["acao"]) && $_REQUEST["acao"] == "adicionar")
+  {
+    
+
 $v1 = $_POST['cad_nome'];
 $v2 = $_POST['cad_tel'];
 $v3 = $_POST['cad_cpf'];
