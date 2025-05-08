@@ -37,9 +37,6 @@ WHERE CPF = '$nam' AND CAMPO_SENHA = '$sen'";
 
 
 
-
-
-
 $result = mysqli_query($abc, $consulta);
 
 if(!$result)
