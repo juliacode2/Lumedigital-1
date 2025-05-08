@@ -25,14 +25,14 @@ $cpf_usuario = $_POST['cad_cpf'];
 $abc = mysqli_connect('localhost', 'root', NULL, 'cadastrobiblio')
 or die ('Erro ao se conectar ao banco de dados');
 
-$consulta = "SELECT * FROM tb_cadastro
+$consulta = "SELECT * FROM cad1
 WHERE CAMPO_USUARIO = '$v4' OR CPF = '$v3'";
 
 $result = mysqli_query($abc, $consulta);
 
 if(!$result)
 {
-  HEADER('Location:cad2.php?log=erro');
+  HEADER('Location:cad1.php?log=erro');
 }
 /*
 while ($tbl = mysqli_fetch_array($result)) 
@@ -51,28 +51,28 @@ while ($tbl = mysqli_fetch_array($result))
 
 if(mysqli_num_rows($result) == 1) 
 {
-HEADER('Location:cad2.php?log=erro3');
+HEADER('Location:cad1.php?log=erro3');
 }
 
 if(mysqli_num_rows($result) < 1)  
 {
 
 
-$sql = "INSERT INTO cad2 (ID, NOME, EMAIL, TEL , CPF, CAMPO_USUARIO, CAMPO_SENHA) 
+$sql = "INSERT INTO cad1 (ID, NOME, EMAIL, TEL , CPF, CAMPO_USUARIO, CAMPO_SENHA) 
 VALUES (NULL, '$v1', '$v2', '$v3', '$v4', '$v5')";
 
 $result2 = mysqli_query($abc, $sql);
 
 if(!$result2)
 {
-HEADER('Location:cad2.php?log=erro');
+HEADER('Location:cad1.php?log=erro');
 }
 else
 {
 	// $mes = "Usuario cadastrado com sucesso!";
 	// echo "<script>alert('$mes');</script>";
 	mysqli_close($abc);
-	HEADER('Location:cad2.php?log=cadastrado'); 
+	HEADER('Location:cad1.php?log=cadastrado'); 
 }
 
 } 
