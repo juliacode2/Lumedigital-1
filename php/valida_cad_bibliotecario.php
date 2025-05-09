@@ -13,18 +13,19 @@ if(!isset($_POST['nome']))
 { 
   HEADER('Location:cad1.php');
 } 
+?>
 
+<?
 $servidor = 'localhost';
 $usuario = 'usuario';
 $senha = 'NULL';
-$banco = 'cad2';
+$banco = 'cad2'; 
 
 $link = mysqli_connect($servidor, $usuario, $senha, $banco)
+
 or die ('Nao foi possivel conectar: 'mysqli_connect($link));
 
 if (isset($_REQUEST["acao"]) && $_REQUEST["acao"] == "adicionar")
-  
-    
 
 $v1 = $_POST['nome'];
 $v2 = $_POST['telefone'];
@@ -39,6 +40,11 @@ $nome = $_POST['nome'];
 $cpf = $_POST['cpf'];
 $abc = mysqli_connect('localhost', 'root', NULL, 'cad2')
 or die ('Erro ao se conectar ao banco de dados');
+
+$result = mysqli_query($link, $sql);
+
+if (!$result)
+{ die ('Erro:' .mysli_error($link)); }
 
 $consulta = "SELECT * FROM cad2
 WHERE cpf = '$v3' OR email = '$v4'";
@@ -57,7 +63,6 @@ while ($tbl = mysqli_fetch_array($result))
     $cp = $tbl["CPF"];
     $tel = $tbl["TEL"];
     $emai = $tbl["EMAIL"];
-
 
 	$usu = $tbl["cpf"];
 	$senh = $tbl["senha"];
