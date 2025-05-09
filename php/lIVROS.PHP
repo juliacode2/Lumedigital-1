@@ -1,80 +1,103 @@
- <?php 
- 
+  <?php 
+  
+  // Projeto do livro Construindo aplicações Web com PHP e MySQL.
+  
    # Dados para a conexão com o banco de dados
 	 $servidor = 'localhost'; 		# Nome DNS ou IP do seu servidor HTTP
 	 $usuario = 'root';       # Nome de usuário para acesso ao MySQL
 	 $senha = NULL;      	    # Senha de acesso
-	 $banco = 'meuBanco';   		  # Nome do banco de dados
- 
+	 $banco = 'glauco';   		  # Nome do banco de dados
+  
    # Executa a conexão com o MySQL
    $link = mysqli_connect($servidor, $usuario, $senha, $banco)
     or die('Não foi possivel conectar: '.mysqli_error($link));
-
-  # Verifica se o arquivo foi chamado a partir de um formulário e se a variavel foi atribuída.
-  if(isset($_REQUEST["acao"]) && $_REQUEST["acao"] == "adicionar")
+  
+  /* Em lista.php há um link para se alterar um registro, vindo com
+  a variável editar. Abaixo se testa se esta pagina está vindo de lá */
+  if(isset($_REQUEST["acao"]) && $_REQUEST["acao"] == "editar")
   {
-   # Cria a expressão SQL de inserção
-    $sql = "INSERT INTO LIVROS (LIVRO, AUTOR, EDITORA) VALUES (";
-    $sql .= "'".$_POST['FormNomeLivro']."', ";
-    $sql .= "'".$_POST['FormNomeAutor']."', ";
-    $sql .= "'".$_POST['FormNomeEditora']."' ";
-    $sql .= ")"; 
-	
-	/* O acima é o mesmo que
-	$ss1 = $_POST['FormNomeLivro'];
-	$ss2 = $_POST['FormNomeAutor'];
-	$ss3 = $_POST['FormNomeEditora'];
-	$sql = "INSERT INTO LIVROS (LIVRO, AUTOR, EDITORA) VALUES ('$ss1', '$ss2', '$ss3')";
-	*/
-	
-    # Executa a expressão SQL no servidor, e armazena o resultado
+    # Cria a expressão SQL de consulta ao registro a ser alterado
+    $sql = "SELECT * FROM LIVROS WHERE ID = ".$_REQUEST['buscacodigo'];
+	/* buscacodigo é a variavel que recebeu o valor do registro 
+	a ser modificado. */
+   
+    # Realiza a busca pelos dados do registro
     $result = mysqli_query($link, $sql);
-
-    # Verifica o sucesso da operação
-    if (!$result) 
-    { die('Erro: '.mysqli_error($link)); }
-
-    # Se a operação foi realizada com sucesso, informa na tela
+   
+    # Valida se o registro existe no banco de dados
+    if($tbl = mysqli_fetch_array($result)) 
+    {
+      # Armazena os dados para preencher no formulário a seguir
+      $Codigo  = $tbl["ID"];
+      $Livro   = $tbl["LIVRO"];
+      $Autor   = $tbl["AUTOR"];
+      $Editora = $tbl["EDITORA"];
+    }
+   
+    # Exibe mensagem de erro se não existir
     else
-    { echo 'A operação foi realizada com sucesso.'; }
-  }
-  else if(isset($_REQUEST["acao"]) && $_REQUEST["acao"] == "alterar")
-  {
-    # Cria a expressão SQL de alteração
-    $sql = "UPDATE LIVROS SET ";
-    $sql .= "LIVRO = '".$_POST['FormNomeLivro']."', ";
-    $sql .= "AUTOR = '".$_POST['FormNomeAutor']."', ";
-    $sql .= "EDITORA = '".$_POST['FormNomeEditora']."'";
-    $sql .= " WHERE ID = ".$_POST['FormCodigoLivro'];
-	// $sql = "UPDATE LIVROS SET
-
-    # Executa a expressão SQL no servidor, e armazena o resultado
-    $result = mysqli_query($link, $sql);
-
-    # Verifica o sucesso da operação
-    if (!$result) 
-    { die('Erro: '.mysqli_error($link)); }
-
-    # Se a operação foi realizada com sucesso, informa na tela
-    else
-    { echo 'A operação foi realizada com sucesso.'; }
-  }
-  else if(isset($_REQUEST["acao"]) && $_REQUEST["acao"] == "excluir")
-  {
-    # Cria a expressão SQL de exclusão
-    $sql = "DELETE FROM LIVROS WHERE ID = ".$_REQUEST['buscacodigo'];
-
-    # Executa a expressão SQL no servidor, e armazena o resultado
-    $result = mysqli_query($link, $sql);
-
-    # Verifica o sucesso da operação
-    if (!$result) 
-    { die('Erro: '.mysqli_error($link)); }
-
-    # Se a operação foi realizada com sucesso, informa na tela
-    else
-    { echo 'A operação foi realizada com sucesso.'; }
+    { echo "Registro não encontrado."; }
   }
 ?>
-  <BR><A href="inserir.php">Clique aqui para inserir um novo registro.</A>
-  <BR><A href="lista.php">Clique aqui para visualizar os registros.</A>
+   
+<HTML>
+ <HEAD>
+  <TITLE>Gerenciando Registros</TITLE>
+ </HEAD>
+ <BODY>
+  Preencha os campos abaixo:
+<?php 
+    if(isset($_REQUEST["acao"]) && $_REQUEST["acao"] == "editar")
+    { $AcaoForm = "alterar"; }
+    else
+    {
+      $AcaoForm = "adicionar"; 
+      $Codigo  = "";
+      $Livro   = "";
+      $Autor   = "";
+      $Editora = "";
+    } 
+	/* isset() determina se uma variável é considerada definida, 
+	isto é, está declarada e é diferente de null. */
+?> 
+  <FORM method="POST" action="gerencia-registro.php?acao=<?php echo $AcaoForm; ?>">
+  <INPUT type="hidden" name="FormCodigoLivro" value="<?php echo $Codigo; ?>">
+
+    <TABLE>
+    <TR>
+     <TD>Nome do Livro:</TD>
+     <TD>
+      <INPUT name="FormNomeLivro" maxlength=64 value="<?php echo $Livro; ?>">
+     </TD>
+    </TR>
+    <TR>
+     <TD>Nome do Autor:</TD>
+     <TD>
+      <INPUT name="FormNomeAutor" maxlength=32 value="<?php echo $Autor; ?>">
+     </TD>
+    </TR>
+    <TR>
+     <TD>Nome da Editora:</TD>
+     <TD>
+      <INPUT name="FormNomeEditora" maxlength=16 value="<?php echo $Editora; ?>">
+     </TD>
+    </TR>
+    <TR>
+     <TD colspan=2 align=right>
+      <INPUT type="reset" value="Limpar">
+ <?php 
+    if(isset($_REQUEST["acao"]) && $_REQUEST["acao"] == "editar")
+    { $NomeBotao = "Alterar"; }
+    else
+    { $NomeBotao = "Cadastrar"; } 
+/* Aqui, antes do INPUT abaixo, é novamente testado se a ação vai ser Editar ou Cadastrar.
+Ou seja, se existir uma variável de nome ação que veio de outro formulário tendo recebido editar,
+o botão recebe o valor Alterar. Senão, recebe Cadastrar */
+?> 
+      <INPUT type="submit" value="<?php echo $NomeBotao; ?>">
+     </TD>
+    </TR>
+   </TABLE>
+  </FORM>
+ </BODY>
+</HTML>
