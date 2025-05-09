@@ -85,7 +85,7 @@
 
         
 
-        <form action="validacadastro.php" method="post">
+        <form action="valida_cad_bibliotecario.php" method="post">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
 
@@ -150,7 +150,7 @@
             <label for="confirmaSenha">Confirme sua senha:</label>
             <input type="password" id="confirmaSenha" name="confirmaSenha" required>
 
-            <label for="codigo">Codigo da escola</label>
+            <label for="codigo">Codigo da escola:</label>
             <input type="password" id="codigo" name="codigo" required>
 
            
@@ -158,7 +158,7 @@
     </div>
 
         <div class="container1">
-        <form action= "validacadastro.php" method="post">
+        <form action= "valida_endereco.php" method="post">
             <br><br><br>
             <label for="endereco">CEP:</label>
             <input type="text" id="cep" name="cep" required>
@@ -167,9 +167,9 @@
             <label for="endereco">NÚMERO:</label>
             <input type="number" id="num" name="num" required>
             <label for="endereco">CIDADE:</label>
-            <input type="text" id="cep" name="cep" required>
+            <input type="text" id="cidade" name="cidade" required>
             <label for="endereco">COMPLEMENTO:</label>
-            <input type="text" id="cep" name="cep" required>
+            <input type="text" id="comple" name="comple" required>
             <br>
             
 
