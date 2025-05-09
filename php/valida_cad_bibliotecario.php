@@ -55,19 +55,8 @@ if(!$result)
 {
   HEADER('Location:cad2.php?log=erro');
 }
-/*
-while ($tbl = mysqli_fetch_array($result)) 
-  {
-    $cod = $tbl["ID"];
-    $nom = $tbl["NOME"];
-    $cp = $tbl["CPF"];
-    $tel = $tbl["TEL"];
-    $emai = $tbl["EMAIL"];
 
-	$usu = $tbl["cpf"];
-	$senh = $tbl["senha"];
-  }
-  */
+
 
 if(mysqli_num_rows($result) == 1) 
 {
