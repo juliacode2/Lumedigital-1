@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-br"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="pt-br">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Login</title>
     <style>
       body {
             font-family: Arial, sans-serif;
-            background-color: #dab3e9;
+            background-color: #f0d0f5;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -54,6 +55,8 @@
             background-color: #ca45c4;
         }
     </style>
+
+
 </head>
 <body>
     <div class="container">
@@ -79,42 +82,6 @@
     </div>
     
     
-
-    <?php
-
-    if(isset($_GET['log']) && $_GET['log'] == 'erro')
-{
-	echo "Falha na conexao!";
-	unset($_GET['log']);
-    // sleep(5);
-	header("Refresh: 1; url=loginbiblio.php");
-}
-
-if(isset($_GET['log']) && $_GET['log'] == 'erro2')
-{
-	echo "Usuario ou senha invalido(a)!";
-	unset($_GET['log']);
-    // sleep(5);
-	header("Refresh: 1; url=loginbiblio.php");
-}
-
-if(isset($_GET['log']) && $_GET['log'] == 'erro3')
-{
-	echo "Usuario ja cadastrado!";
-	unset($_GET['log']);
-    // sleep(5);
-	header("Refresh: 1; url=loginbiblio.php");
-}
-
-if(isset($_GET['log']) && $_GET['log'] == 'cadastrado')
-{
-	echo "Usuario cadastrado com sucesso!";
-	sleep(2);
-	unset($_GET['log']);
-	header("Refresh: 1; url=loginbiblio.php");
-}
-
-?>
 
 </body>
 </html>

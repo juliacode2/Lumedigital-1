@@ -9,7 +9,7 @@
         
       body {
             font-family: Arial, sans-serif;
-            background-color: #dab3e9;
+            background-color: #f0d0f5;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -59,15 +59,6 @@
 </head>
 <body>
 
-
-
-<div class="photo-container">
-      <a href="../php/leitor.php">
-        <img src="imagem.png" 
-        height="400"
-        width="414">
-</a>
-    </div>
 
     <div class="container">
         <h2>Login Aluno</h2>

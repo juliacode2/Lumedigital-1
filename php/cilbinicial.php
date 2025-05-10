@@ -47,25 +47,24 @@
     <nav class="menu">
         <ul>
             <li>
-                <i class="fas fa-qrcode"></i>
-                <a href="#">Dashboard</a>
+                <i class="fas fa-key"></i>
+                <a href="biblioteca.php">Bibliotecário</a>
             </li>
             <li>
-                <i class="fas fa-link"></i>
-                <a href="#">Página</a>
+                <i class="fa-solid fa-user"></i>
+                <a href="leitor.php">Aluno</a>
             </li>
-
+            <li>
+                <i class="fa-solid fa-book"></i>
+                <a href="#">Meus livros</a>
+            </li>
             <li>
                 <i class="fas fa-stream"></i>
                 <a href="#">Mensagem</a>
             </li>
             <li>
-                <i class="fas fa-calendar-week"></i>
-                <a href="#">Configurações</a>
-            </li>
-            <li>
                 <i class="fas fa-question-circle"></i>
-                <a href="#">Funções</a>
+                <a href="#">Suporte</a>
             </li>
         </ul>
     </nav>
@@ -89,15 +88,19 @@
   <div class="sidebar_menup">
       <div class="sidebar_titulop">
            <a href="#"></a>
-      
-           <div class="photo-container">
-              <img src="../php/imagem.png" 
-              height="400"
-              width="414">
-          </div>
-          
+    
       </div>
-  
+
+      <center>
+
+           <div class="photo-container">
+        
+             <img src="../php/imagem.png" 
+              height="250"
+              width="280">
+
+          </div>
+</center>
   
   </nav>
   </div> 
@@ -126,15 +129,13 @@
       $result = $conn->query($sql);
 
 if ($result === false) {
-    // A query falhou – exiba o erro para depuração
     echo "Erro na consulta: " . $conn->error;
-} elseif ($result->num_rows > 0) {
-    // Há resultados
+} elseif ($result->num_rows > 0) { 
     while ($row = $result->fetch_assoc()) {
         echo "LIVRO EXISTENTE: " . $row["C"] . "<br>";
     }
 } else {
-    // Consulta funcionou, mas sem resultados
+
     echo "Nenhum resultado encontrado.";
 }
 
