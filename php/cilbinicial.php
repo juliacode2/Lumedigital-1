@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/menu.css">
   <link rel="stylesheet" href="../css/barra.css">
+  <link rel="php" href="../php/pesquisa.php">
   
 </head>
 <body>
@@ -14,15 +15,16 @@
   <nav class="navbar">
     <div class="logo">Lume Digital</div>
     <center>
-    <ul class="menu">
-      <div class="main-content">
+
+      <form class="search-box"method="post">
+        <input type="text" name="pesquisa" placeholder="Pesquisar...">
+        <button type="submit"></button>
+    </form> 
     
-        <form class="search-box" method="post" action="">
-          <input type="text" name="busca" placeholder="Faça sua Pesquisa">
-         <button type="submit"><i></i></button>
-        </form>
-      </div>
-    </center>
+</center>
+
+
+
 
    <li> <h2>BIBLIOTECA</h2></li>
        
@@ -35,7 +37,7 @@
 
 </div>
 </li>
-
+    
 
     <div class="sidebar_menu">
         <div class="sidebar_titulo">
@@ -102,7 +104,44 @@
   </div>
   </div>
   </div>
-  
+  <center>
+  <?php
+      $servername = "localhost";
+      $username = "lumedigital";
+      $password = "biblio";
+      $dbname = "livros";
+
+      $conn= new mysqli("localhost", "lumedigital", "biblio", "livros");
+
+
+      if ($conn->connect_error) {
+          die("Conexão falhou: " . $conn->connect_error);
+      }
+
+      $termo = $_POST['pesquisa'];
+
+      $sql = "SELECT * FROM planilha1 WHERE C LIKE'%" . $termo . "%'";
+
+      $resultado = $conn->query($sql);
+      $result = $conn->query($sql);
+
+if ($result === false) {
+    // A query falhou – exiba o erro para depuração
+    echo "Erro na consulta: " . $conn->error;
+} elseif ($result->num_rows > 0) {
+    // Há resultados
+    while ($row = $result->fetch_assoc()) {
+        echo "LIVRO EXISTENTE: " . $row["C"] . "<br>";
+    }
+} else {
+    // Consulta funcionou, mas sem resultados
+    echo "Nenhum resultado encontrado.";
+}
+
+
+
+ ?>
+<center>
  
 </body>
 </html>
