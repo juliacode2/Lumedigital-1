@@ -58,6 +58,17 @@
     </style>
 </head>
 <body>
+
+
+
+<div class="photo-container">
+      <a href="../php/leitor.php">
+        <img src="imagem.png" 
+        height="400"
+        width="414">
+</a>
+    </div>
+
     <div class="container">
         <h2>Login Aluno</h2>
         <form action="validalogin.php" method="post">
