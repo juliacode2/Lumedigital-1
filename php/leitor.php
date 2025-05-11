@@ -72,7 +72,7 @@
             <button type="submit">Entrar</button>
         </form>
 
-        <a href="cad1.php">
+        <a href="teste.php">
         <h5>Fazer Cadastro</h5>
         </a>
 
