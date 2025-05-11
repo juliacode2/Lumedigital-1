@@ -71,12 +71,6 @@ $result = mysqli_query($abc, $consulta);
 
 
 
-
-	mysqli_close($abc);
-	HEADER('Location:cad1.php?log=cadastrado'); 
-
-
-
 $insert = "INSERT INTO tb_cadastroaluno (ID, NOME, EMAIL, TEL, CPF, SENHA, CONFIRM_CADASTROALUNO) 
            VALUES (NULL, '$nome', '$email', '$telefone', '$cpf', '$senha_hash', '$confirma')";
 
