@@ -19,20 +19,9 @@
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 300px;
+        width: 550px;
     }
-    .container1 {
-        background:  #ab97d1;
-        display: flex;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        height: 66%;
-        float: left;
-        left: 50px;
-        width: 200px;
-        
-    }
+    
     h2 {
         text-align: center;
         margin-bottom: 20px;
@@ -72,25 +61,24 @@
 
 
 
-<script>
-function exibirConfirmacao(event) {
-    event.preventDefault(); // Impede o envio do formulário
-    document.getElementById('confirmation').style.display = 'block';
-}
-</script>
+
 
     <div class="container">
         <h2>Cadastro Aluno </h2>
 
-        <form action="validacadastro.php" method="post">
+        <form action="valida_cad_aluno.php" method="post">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
 
-            <label for="telefone">Telefone:</label>
+            <label for="email">E-mail:</label>
+           <input type="email" id="email" name="email" required>
+
+          <div>
+            <label for="telefone">Tel:</label>
             <input type="text" id="telefone" name="telefone" required>
 
             <label for="cpf">CPF:</label>
-            <input type="text" id="cpf" name="cpf" required>
+            <input type="text" id="cpf" name="cpf" required></div>
 
             <script>
         function validaCPF(cpf) {
@@ -137,30 +125,15 @@ function exibirConfirmacao(event) {
         });
     </script>
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
 
-            <label for="senha">Senha:</label>
+          <div><label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" required>
 
-            <label for="confirmaSenha">Confirme sua senha:</label>
-            <input type="password" id="confirmaSenha" name="confirmaSenha" required>
+            <label for="confirmaSenha">Confirmação:</label>
+            <input type="password" id="confirmaSenha" name="confirmaSenha" required></div>
+   
 
-</form>
-</div>
-        
-    <div class="container1">
-        <form action= "validacadastro.php" method="post">
-            <label for="endereco">CEP:</label>
-            <input type="text" id="cep" name="cep" required>
-            <label for="endereco">BAIRRO:</label>
-            <input type="text" id="bairro" name="bloco" required>
-            <label for="endereco">NÚMERO:</label>
-            <input type="number" id="num" name="num" required>
-            <label for="endereco">CIDADE:</label>
-            <input type="text" id="cep" name="cep" required>
-            <label for="endereco">COMPLEMENTO:</label>
-            <input type="text" id="cep" name="cep" required>
+  
 
             <button type="submit">Cadastrar</button><br>
 
@@ -176,6 +149,8 @@ function exibirConfirmacao(event) {
 </form>
 </form>
 </div>
+    </li>
+    </div>
     
    
 

@@ -7,15 +7,9 @@
 
 <body>
 <h2>Cadastro</h2>
+
+
 <?php
-
-if(!isset($_POST['nome'])) 
-{ 
-  HEADER('Location:cad1.php');
-} 
-?>
-
-<?
 $servidor = 'localhost';
 $usuario = 'usuario';
 $senha = 'NULL';

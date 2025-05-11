@@ -21,21 +21,7 @@
             <label for="confirmaSenha">Confirme sua senha:</label>
             <input type="password" id="confirmaSenha" name="confirmaSenha" required>
 
-</form>
-</div>
-        
-    <div class="container1">
-        <form action= "validacadastro.php" method="post">
-            <label for="endereco">CEP:</label>
-            <input type="text" id="cep" name="cep" required>
-            <label for="endereco">BAIRRO:</label>
-            <input type="text" id="bairro" name="bloco" required>
-            <label for="endereco">NÚMERO:</label>
-            <input type="number" id="num" name="num" required>
-            <label for="endereco">CIDADE:</label>
-            <input type="text" id="cep" name="cep" required>
-            <label for="endereco">COMPLEMENTO:</label>
-            <input type="text" id="cep" name="cep" required>
+
 
             <button type="submit">Cadastrar</button><br>
 
@@ -47,7 +33,8 @@
 <INPUT type="hidden" name="edit_excl"/>
 <button type="submit">Excluir</button><br><br>
 </form>
-
+</form>
+</div>
 </body>
 
 </html>
