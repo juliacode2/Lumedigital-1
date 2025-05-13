@@ -1,101 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Cadastro</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #dab3e9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background: #ab97d1;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            height: 650px; 
-        }
-    
-    .container1 {
-        background:  #ab97d1;
+<title>Cadastro</title>
+<meta charset="utf-8">
+<style>
+      
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #dab3e9;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        background: #ab97d1;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        height: 82%;
-        float: left;
-        left: 50px;
-        width: 210px;
-        
+        width: 550px;
     }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #414c87;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #a879c7;
-            color: white(26, 19, 214);
-            border: none;
-            padding: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #ca45c4;
-        }
-    </style>
-
-
+   
+    input {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #414c87;
+        border-radius: 4px;
+    }
+    button {
+        background-color: #a879c7;
+        color: white(26, 19, 214);
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 300px;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #ca45c4;
+    }
+</style>
 </head>
+
+
 <body>
+
+<center>
+<div class="container">
+<h2>Cadastro Aluno </h2>
+
+
+<form method="post" action="concad2.php">
+
+<label for="name"> NOME: </label>
+<input type="text" id="name" name="name" size="50" maxlength="50" /> <br>
+
+<label for="email">E-mail: </label>
+<input type="email" id="email" name="email" size="50" maxlength="50" /><br>
+
+<label for="birth">Data de nascimento: </label>
+<input type="date" id="birth" name="birth" size="10" maxlength="10"  /><br>
+
+<label for="cpf">CPF</label>
+<input type="text" id="cpf" name="cpf" size="10" maxlength="10"  /> 
 
 
 <script>
-    function exibirConfirmacao(event) {
-        event.preventDefault();
-        document.getElementById('confirmation').style.display = 'block';
-    }
-</script>
-
-
-    <div class="container">
-        <h2>Cadastro Bibliotecário </h2>
-
-        
-
-        <form action="valida_cad_bibliotecario.php" method="post">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-
-            <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone" name="telefone" required>
-
-            <label for="cpf">CPF:</label>
-            <input type="text" id="cpf" name="cpf" required>
-
-            <script>
         function validaCPF(cpf) {
             cpf = cpf.replace(/\D+/g, '');
             if (cpf.length !== 11) return false;
@@ -140,69 +112,38 @@
         });
     </script>
 
+<label for="phone"> Telefone: </label>
+<input type="phone" id="phone" name="phone" size="12" maxlength="12"  /> <br /> 
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
 
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required>
+<label for="senha">Senha</label>
+<input type="password" id="senha" name="senha" size="40" maxlength="40"  /> <br /> 
 
-            <label for="confirmaSenha">Confirme sua senha:</label>
-            <input type="password" id="confirmaSenha" name="confirmaSenha" required>
+<label for="codigo">Cógido Institucional:</label>
+<input type="password" id="codigo" name="codigo" size="30" maxlength="30"  /> <br /> 
 
-            <label for="codigo">Codigo da escola:</label>
-            <input type="password" id="codigo" name="codigo" required>
+<label for= "other" > Comente sobre você: </label>
+<textarea name= "other" rows="2" cols="30"> </textarea>  <br /> <br /> 
 
-           
-        </form>
-    </div>
 
-        <div class="container1">
-        <form action= "valida_endereco.php" method="post">
-            <br><br><br>
-            <label for="endereco">CEP:</label>
-            <input type="text" id="cep" name="cep" required>
-            <label for="endereco">BAIRRO:</label>
-            <input type="text" id="bairro" name="bloco" required>
-            <label for="endereco">NÚMERO:</label>
-            <input type="number" id="num" name="num" required>
-            <label for="endereco">CIDADE:</label>
-            <input type="text" id="cidade" name="cidade" required>
-            <label for="endereco">COMPLEMENTO:</label>
-            <input type="text" id="comple" name="comple" required>
-            <br>
-            
-
-            <button type="submit">Cadastrar</button><br>
-
-            <form method="post" action="cad2.php">
-<INPUT type="hidden" name="cadastro"/>
-<button type="submit">Editar</button><br>
-
-<form method="post" action="editar_excluir.php">
-<INPUT type="hidden" name="edit_excl"/>
-<button type="submit">Excluir</button><br><br>
-
-<br /> <br />
-</form>
-</form>
-</div>
-    
-   
-
+<button type="submit">Cadastrar</button><br>
 
 </form>
+<p><h5> Outras opções: </h5> </p>
 
-    </body>
- </html>
+<form method="post" action="altera.php">
+<button type="submit">Alterar</button><br>
+</form><br>
 
+<form method="post" action="exclui.php">
+<button type="submit">Excluir</button><br>
+</form> <br>
 
+<form method="post" action="pesquisa.php">
+<button type="submit">Pesquisar</button><br>
+</form>
+    </center>
 
-
-        </div>
-    </div>
 </body>
+
 </html>
-
-
-

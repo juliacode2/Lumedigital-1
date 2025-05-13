@@ -47,12 +47,17 @@
 
 <body>
 
+
+
+
+
+
 <center>
 <div class="container">
 <h2>Cadastro Aluno </h2>
 
 
-<form method="post" action="teste1.php">
+<form method="post" action="concad1.php">
 
 <label for="name"> NOME: </label>
 <input type="text" id="name" name="name" size="50" maxlength="50" /> <br>
@@ -125,6 +130,8 @@
 
 <button type="submit">Cadastrar</button><br>
 
+
+
 </form>
 <p><h5> Outras opções: </h5> </p>
 
@@ -141,6 +148,17 @@
 </form>
     </center>
 
+
+
+    <?php
+if(isset($_GET['log']) && $_GET['log'] == 'erro')
+{
+	echo "Email inválido!";
+	unset($_GET['log']);
+    // sleep(5);
+	header("Refresh: 1; url=aluno.php");
+}
+?>
 </body>
 
 </html>

@@ -61,7 +61,7 @@
 <body>
     <div class="container">
         <h2>Login</h2>
-        <form action="validalogin.php" method="post">
+        <form action="text2.php" method="post">
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" required>
 

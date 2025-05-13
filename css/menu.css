@@ -22,19 +22,19 @@
 
 .sidebar_titulo{
   position: absolute;
-  height: 200px;
+  height: 500px;
   width: 100%;
   box-shadow: 0px 2px 4px #6e38382e; 
   left: 50px;
 }
 .sidebar_menu a{
   color: white;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 50px;
+  font-weight: 600;
   text-decoration: none;
   position: absolute;
   left: 20px;
-  line-height:60px;
+  line-height:100px;
   
 }
 .sidebar_menu .menu{
@@ -64,7 +64,7 @@
 .sidebar_menu .menu a{
   color: white;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 0px;
 
 }
 

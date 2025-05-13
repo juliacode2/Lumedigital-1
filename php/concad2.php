@@ -28,7 +28,9 @@ $cpf = $_POST['cpf'];
 
 $s_phone = $_POST['phone'];
 
-$senha = $_POST['birth'];
+$senha = $_POST['senha'];
+
+$codigo = $_POST['codigo'];
 
 $area = $_POST['other'];
 
@@ -48,16 +50,18 @@ echo "Seu telefone: $s_phone <br/>";
 
 echo "Sua senha: $senha <br/>";
 
+echo "Código Institucional: $codigo <br/>";
+
 echo "Seu comentario sobre voce: $area <br/> <br/> <br/>";
 
 
 
-$abc = mysqli_connect('localhost', 'root', NULL, 'cadastro')
+$abc = mysqli_connect('localhost', 'root', NULL, 'cadastro_biblio')
 or die ('Erro ao se conectar ao banco de dados');
 
 
-$insere =  "INSERT INTO tb_cadastro(nome, email, data_nasc, cpf, tel, 
-senha,comentario) VALUES ('$name','$email','$date_birth','$cpf','$s_phone','$senha','$area')";
+$insere =  "INSERT INTO tb_bibliotecario(nome, email, data_nasc, cpf, tel, 
+senha,comentario) VALUES ('$name','$email','$date_birth','$cpf','$s_phone','$senha','$codigo,''$area')";
 
 mysqli_query($abc, $insere);
 

@@ -69,12 +69,78 @@
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" required>
 
-            <button type="submit">Entrar</button>
+            <form method="post" action="cadastrar_f.php">
+            <button type="submit">Entrar</button><br>
+    </form>
         </form>
 
-        <a href="teste.php">
+        <form method="post" action="editar_excluir_f.php">
+        <button type="submit">Enditar/Excluir</button>
+</form>
+
+        <a href="cad1.php">
         <h5>Fazer Cadastro</h5>
         </a>
+  
+
+
+
+</form>
+
+<?php
+
+if(isset($_GET['log']) && $_GET['log'] == 'erro')
+{
+	echo "Falha na conexao!";
+	// Abaixo, o unset zera a variavel
+	unset($_GET['log']);
+	// Abaixo, o sleep faz uma pausa de 2 segundos.
+    sleep(2);
+	// Abaixo, outra funcionalidade do header: recarregar a própria pagina
+	header("Refresh: 1; url=leitor.php");
+}
+
+if(isset($_GET['log']) && $_GET['log'] == 'erro2')
+{
+	echo "Usuario ou senha invalido(a)!";
+	unset($_GET['log']);
+    sleep(2);
+	header("Refresh: 1; url=leitor.php");
+}
+
+if(isset($_GET['log']) && $_GET['log'] == 'erro3')
+{
+	echo "Usuario ja cadastrado!";
+	unset($_GET['log']);
+    // sleep(5);
+	header("Refresh: 1; url=leitor.php");
+	
+}
+
+if(isset($_GET['log']) && $_GET['log'] == 'erro4')
+{
+	echo "Email inválido!";
+	unset($_GET['log']);
+    // sleep(5);
+	header("Refresh: 1; url=leitor.php");
+}
+
+if(isset($_GET['log']) && $_GET['log'] == 'cadastrado')
+{
+	echo "Usuario cadastrado com sucesso!";
+	sleep(2);
+	unset($_GET['log']);
+	header("Refresh: 1; url=leitor.php");
+}
+
+?>
+
+
+    </body>
+ </html>
+
+
+
 
     </div>
 

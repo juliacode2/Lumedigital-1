@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="../css/barra.css">
   <link rel="php" href="../php/pesquisa.php">
   
+  
+  
 </head>
 <body>
 
@@ -23,9 +25,6 @@
     
 </center>
 
-
-
-
    <li> <h2>BIBLIOTECA</h2></li>
        
 
@@ -33,35 +32,40 @@
     </ul>
   </nav>
 
-  
 
 </div>
 </li>
-    
+
 
     <div class="sidebar_menu">
         <div class="sidebar_titulo">
              <a href="#">Painel de Controle</a>
         </div>
   
+
+
     <nav class="menu">
         <ul>
             <li>
                 <i class="fas fa-key"></i>
                 <a href="biblioteca.php">Bibliotecário</a>
             </li>
+            <br>
             <li>
                 <i class="fa-solid fa-user"></i>
                 <a href="leitor.php">Aluno</a>
             </li>
+            <br>
             <li>
                 <i class="fa-solid fa-book"></i>
                 <a href="#">Meus livros</a>
             </li>
+            <br>
             <li>
                 <i class="fas fa-stream"></i>
                 <a href="#">Mensagem</a>
             </li>
+            <br>
             <li>
                 <i class="fas fa-question-circle"></i>
                 <a href="#">Suporte</a>
