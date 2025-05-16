@@ -76,6 +76,7 @@
     </div>
     </div>
     </div>
+</nav>
 
     <div class="menu">
       <input type="checkbox" id="check">
