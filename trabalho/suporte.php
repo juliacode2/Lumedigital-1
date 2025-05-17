@@ -7,21 +7,59 @@
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="menu.css">
   <link rel="stylesheet" href="barra.css">
-  <link rel="php" href="../php/pesquisa.php">
   
   
+  <style>
+     .container {
+            background: #ab97d1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;}
+     
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left;
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #414c87;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #a879c7;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ca45c4;
+        }
+  </style>
   
 </head>
 <body>
 
   <nav class="navbar">
     <div class="logo">Lume Digital</div>
+    
     <center>
 
-      <form class="search-box"method="post">
-        <input type="text" name="pesquisa" placeholder="Pesquisar...">
-        <button type="submit"></button>
-    </form> 
+      <div class="logo">Suporte  LumeDigital</div> 
     
 </center>
 
@@ -68,7 +106,11 @@
             <br>
             <li>
                 <i class="fas fa-question-circle"></i>
-                <a href="suporte.php">Suporte</a>
+                <a href="#">Suporte</a>
+            </li><br>
+            <li>
+                <i class="fas fa-home"></i>
+                <a href="cilbinicial.php">Início</a>
             </li>
         </ul>
     </nav>
@@ -124,38 +166,23 @@
   </div>
   <center>
 
-  
-  <?php
-      $servername = "localhost";
-      $username = "lumedigital";
-      $password = "biblio";
-      $dbname = "livros";
+<p><h4>A LumeDigital</h4> oferece suporte técnico com qualidade para garantir que<br> tenham sempre a melhor experiência
+ com nossos serviços.<br> A empresa está pronta para resolver suas dúvidas e em solucionar problemas.<br>
+  Nosso compromisso é com a eficiência e a satisfação total do leitor.</p><br> <br><br>
 
-      $conn= new mysqli("localhost", "lumedigital", "biblio", "livros");
-
-
-      if ($conn->connect_error) {
-          die("Conexão falhou: " . $conn->connect_error);
-      }
-
-      $termo = $_POST['pesquisa'];
-
-      $sql = "SELECT * FROM planilha1 WHERE C LIKE'%" . $termo . "%'";
-
-      $resultado = $conn->query($sql);
-      $result = $conn->query($sql);
-
-if ($result === false) {
-    echo "Erro na consulta: " . $conn->error;
-} elseif ($result->num_rows > 0) { 
-    while ($row = $result->fetch_assoc()) {
-        echo "LIVRO EXISTENTE: " . $row["C"] . "<br>";
-    }
-} else {
-
-    echo "Nenhum resultado encontrado.";
-}
+<div class="container">
+        <h2>SUPORTE</h2>
+        <form action="" method="post">
+            <label for="email">Digite seu E-mail:</label><br>
+            <input type="email" id="email" name="email" required>
+          
+           <label for= "other" > Qual é a sua dúvida? </label><br>
+           <textarea name= "other" rows="4" cols="40"> </textarea>  <br /> 
+          
+            <form method="post" action="">
+            <button type="submit">Enviar</button><br>
+    </form>
 
 
 
- ?>
+</center>

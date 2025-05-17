@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="menu.css">
   <link rel="stylesheet" href="barra.css">
   
@@ -106,7 +106,7 @@
             <br>
             <li>
                 <i class="fas fa-question-circle"></i>
-                <a href="#">Suporte</a>
+                <a href="suporte.php">Suporte</a>
             </li><br>
             <li>
                 <i class="fas fa-home"></i>
@@ -152,7 +152,7 @@
 
            <div class="photo-container">
         
-             <img src="../php/imagem.png" 
+             <img src="imagem.png" 
               height="250"
               width="280">
 
@@ -176,7 +176,7 @@ Atualmente, o CILB oferece os idiomas de Inglês,  Espanhol e Francês,<br> func
  da leitura,<br> o CP, recebeu o nome dela:<h4> Biblioteca Professora Telma Cristiane.</h4></p><br>
 
 <div class="container">
-        <h2>SUPORTE</h2>
+        <h2>MENSAGEM</h2>
         <form action="" method="post">
             <label for="email">Digite seu E-mail:</label><br>
             <input type="email" id="email" name="email" required>
