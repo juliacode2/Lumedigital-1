@@ -16,13 +16,7 @@
 
   <nav class="navbar">
     <div class="logo">Lume Digital</div>
-    <center>
-
-      <form class="search-box"method="post">
-        <input type="text" name="pesquisa" placeholder="Pesquisar...">
-        <button type="submit"></button>
-    </form> 
-    
+    <
 </center>
 
    <li> <h2>BIBLIOTECA</h2></li>
@@ -90,7 +84,12 @@
 </li>
 
 
-  <div class="sidebar_menup">
+  <div class="si
+<center>
+ 
+</body>
+</html>
+debar_menup">
       <div class="sidebar_titulop">
            <a href="#"></a>
     
@@ -113,41 +112,3 @@
   </div>
   </div>
   <center>
-  <?php
-      $servername = "localhost";
-      $username = "lumedigital";
-      $password = "biblio";
-      $dbname = "livros";
-
-      $conn= new mysqli("localhost", "lumedigital", "biblio", "livros");
-
-
-      if ($conn->connect_error) {
-          die("Conexão falhou: " . $conn->connect_error);
-      }
-
-      $termo = $_POST['pesquisa'];
-
-      $sql = "SELECT * FROM planilha1 WHERE C LIKE'%" . $termo . "%'";
-
-      $resultado = $conn->query($sql);
-      $result = $conn->query($sql);
-
-if ($result === false) {
-    echo "Erro na consulta: " . $conn->error;
-} elseif ($result->num_rows > 0) { 
-    while ($row = $result->fetch_assoc()) {
-        echo "LIVRO EXISTENTE: " . $row["C"] . "<br>";
-    }
-} else {
-
-    echo "Nenhum resultado encontrado.";
-}
-
-
-
- ?>
-<center>
- 
-</body>
-</html>
