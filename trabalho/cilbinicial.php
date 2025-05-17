@@ -103,17 +103,20 @@
   <div class="sidebar_menup">
       <div class="sidebar_titulop">
            <a href="#"></a>
+    
       </div>
 
       <center>
 
            <div class="photo-container">
+        
              <img src="../php/imagem.png" 
               height="250"
               width="280">
 
           </div>
 </center>
+  
   </nav>
   </div> 
   </div>
