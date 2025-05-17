@@ -30,8 +30,6 @@ $s_phone = $_POST['phone'];
 
 $senha = $_POST['senha'];
 
-$codigo = $_POST['codigo'];
-
 $area = $_POST['other'];
 
  

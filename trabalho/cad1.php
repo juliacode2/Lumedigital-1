@@ -57,7 +57,7 @@
 <h2>Cadastro Aluno </h2>
 
 
-<form method="post" action="concad1.php">
+<form method="post" action="controle_cadastro_f.php">
 
 <label for="name"> NOME: </label>
 <input type="text" id="name" name="name" size="50" maxlength="50" /> <br>
