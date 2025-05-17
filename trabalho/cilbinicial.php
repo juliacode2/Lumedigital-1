@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="menu.css">
-  <link rel="stylesheet" href="../css/barra.css">
+  <link rel="stylesheet" href="barra.css">
   <link rel="php" href="../php/pesquisa.php">
   
   
@@ -16,7 +16,13 @@
 
   <nav class="navbar">
     <div class="logo">Lume Digital</div>
-    <
+    <center>
+
+      <form class="search-box"method="post">
+        <input type="text" name="pesquisa" placeholder="Pesquisar...">
+        <button type="submit"></button>
+    </form> 
+    
 </center>
 
    <li> <h2>BIBLIOTECA</h2></li>
@@ -62,7 +68,7 @@
             <br>
             <li>
                 <i class="fas fa-question-circle"></i>
-                <a href="#">Suporte</a>
+                <a href="sobre.php">Suporte</a>
             </li>
         </ul>
     </nav>
@@ -80,35 +86,73 @@
               <i class="fas fa-bars"></i>
           </label>
      
+</nav>
+
+    <div class="menu">
+      <input type="checkbox" id="check">
+      <div class="menu-icon">
+        <li>
+          <label for="check">
+              <i class="fas fa-bars"></i>
+          </label>
+     
 </div>
 </li>
 
 
-  <div class="si
-<center>
- 
-</body>
-</html>
-debar_menup">
+  <div class="sidebar_menup">
       <div class="sidebar_titulop">
            <a href="#"></a>
-    
       </div>
 
       <center>
 
            <div class="photo-container">
-        
              <img src="../php/imagem.png" 
               height="250"
               width="280">
 
           </div>
 </center>
-  
   </nav>
   </div> 
   </div>
   </div>
   </div>
   <center>
+
+  
+  <?php
+      $servername = "localhost";
+      $username = "lumedigital";
+      $password = "biblio";
+      $dbname = "livros";
+
+      $conn= new mysqli("localhost", "lumedigital", "biblio", "livros");
+
+
+      if ($conn->connect_error) {
+          die("Conexão falhou: " . $conn->connect_error);
+      }
+
+      $termo = $_POST['pesquisa'];
+
+      $sql = "SELECT * FROM planilha1 WHERE C LIKE'%" . $termo . "%'";
+
+      $resultado = $conn->query($sql);
+      $result = $conn->query($sql);
+
+if ($result === false) {
+    echo "Erro na consulta: " . $conn->error;
+} elseif ($result->num_rows > 0) { 
+    while ($row = $result->fetch_assoc()) {
+        echo "LIVRO EXISTENTE: " . $row["C"] . "<br>";
+    }
+} else {
+
+    echo "Nenhum resultado encontrado.";
+}
+
+
+
+ ?>
