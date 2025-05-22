@@ -49,6 +49,20 @@
         button:hover {
             background-color: #ca45c4;
         }
+        h5 {
+             text-align: center;
+              margin-bottom: 10px;
+              color:purple;
+              font-size: 30px;
+              font-weight: 500px;
+        }
+         h4 {
+             text-align: center;
+              margin-bottom: 10px;
+              color:black;
+              font-size: 20px;
+             
+        }
   </style>
   
 </head>
@@ -166,9 +180,9 @@
   </div>
   <center>
 
-<p><h4>A LumeDigital</h4> oferece suporte técnico com qualidade para garantir que<br> tenham sempre a melhor experiência
+<p><h5>A LumeDigital</h5><h4> oferece suporte técnico com qualidade para garantir que<br> tenham sempre a melhor experiência
  com nossos serviços.<br> A empresa está pronta para resolver suas dúvidas e em solucionar problemas.<br>
-  Nosso compromisso é com a eficiência e a satisfação total do leitor.</p><br> <br><br>
+  Nosso compromisso é com a eficiência e a satisfação total do leitor.</h4></p><br> <br><br>
 
 <div class="container">
         <h2>SUPORTE</h2>
